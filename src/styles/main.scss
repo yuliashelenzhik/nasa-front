@@ -1,0 +1,17 @@
+@import "./variables";
+@import "./mixins";
+@import "./components/header.scss";
+@import "./components/welcome.scss";
+@import "./components/categoriesHeadlines.scss";
+@import "./components/tabsContainer.scss";
+@import "./components/views.scss";
+@import "./components/loading.scss";
+@import "./components/search.scss";
+@import "./pages/Home.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background-color: #efefef;
+  padding: 24px;
+  font-family: "Montserrat", sans-serif;
+}

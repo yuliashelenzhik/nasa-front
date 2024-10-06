@@ -1,0 +1,27 @@
+.welcome-container {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  > img {
+    max-width: 100px;
+  }
+  > p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #028090;
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 12px;
+
+    > div {
+      margin-bottom: 12px;
+    }
+  }
+}

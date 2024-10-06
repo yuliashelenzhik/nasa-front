@@ -1,0 +1,21 @@
+.main-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 24px;
+  margin: 0 auto;
+  > div {
+    background-color: white;
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 12px;
+
+    > div {
+      margin-bottom: 12px;
+    }
+  }
+}

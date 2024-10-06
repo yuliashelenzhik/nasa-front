@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  color: #028090;
+
+  > h1 {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+
+  > div.header-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+}
