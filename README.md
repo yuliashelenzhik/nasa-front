@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+EarthTrackr
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Description
 
-## Available Scripts
+EarthTrackr is a full-stack application built with Express (TypeScript) on the backend and React (TypeScript) on the frontend. The app provides real-time data on global Earth events such as wildfires, volcanoes, severe storms, and other events (when available).
 
-In the project directory, you can run:
+The data is filtered by event category and displayed across different tabs. Users can visualize monthly data for 2024 (the year most of NASA's API data is available) by event category, as well as see a chart that tracks the number of events in each category per continent.
 
-### `npm start`
+To optimize performance, each API call caches data in local storage. When users revisit a tab or apply a filter within one hour of the previous request, the cached data is shown instantly. After one hour, the app will refresh the data with a new API call to ensure it’s up to date. This refresh interval can be adjusted in the code (frontend) to a longer period, such as 24 hours.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Also, users can search for a specific continent and filter event counts by the selected continent. Continent information is extracted from coordinates, and filter results are also stored in local storage to minimize redundant API calls when data is unlikely to have changed.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The app uses Recharts for data visualization.
+Axios is used for API requests.
+State management is handled primarily with Context API to avoid depending on too many external libraries.
+Styling is implemented using SCSS.
 
-### `npm test`
+It is deployed on Vercel.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Clone the backend and frontend repositories:
+
+Backend:
+
+### `git clone https://github.com/yuliashelenzhik/nasa-app.git`
+
+### `cd nasa-app`
+
+Frontend:
+
+### `git clone https://github.com/yuliashelenzhik/nasa-front.git`
+
+### `cd nasa-front`
+
+### Environment Variables
+
+### Create a .env file in the root of your backend folder:
+
+PORT=3000
+API_KEY=your_nasa_api_key
+EONET_API_URL=https://eonet.sci.gsfc.nasa.gov/api/v3
+
+### Create a .env file in your frontend folder:
+
+REACT_APP_API_URL=http://localhost:3000/api
+
+### Backend setup
+
+### `npm install`
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For development:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run dev`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For production:
 
-### `npm run eject`
+### `npm run start`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Frontend Setup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `npm install`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For development:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `npm run start`
 
-## Learn More
+For production:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `npm run build`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Running the Application
+
+Backend: Ensure that the backend server is running on http://localhost:3000.
+Frontend: The React app will run on http://localhost:3001 (or another port if specified).
+
+Once both are running, visit the frontend URL in the browser. The application should be fully functional, fetching data from NASA's API and displaying it on the frontend.
